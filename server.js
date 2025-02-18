@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('Hello, World! from Node.js inside Minikube');
+    res.send('Hello, World! from Node.js inside Minikube *******************');
     console.log(`Server is running on port ${PORT}`);
 });
 
