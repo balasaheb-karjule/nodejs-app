@@ -11,7 +11,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'sudo docker build -t balak01/nodejs-app . | echo bala@1234'
+                  sh 'echo bala@1234 | sudo -S docker build -t balak01/nodejs-app . '
                 }
             }
         }
