@@ -18,10 +18,12 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: "balak01/nodejs-app:latest"
-        imagePullPolicy: Always
+        image: "balak01/nodejs-app:IMAGE_TAG"
+        imagePullPolicy: Never
         ports:
           - containerPort: 3000
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: v1
 kind: Service
