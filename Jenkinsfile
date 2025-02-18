@@ -11,7 +11,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'sudo  docker build -t balak01/nodejs-app . | echo "bala@1234"'
+                  sh 'docker build -t balak01/nodejs-app .'
                 }
             }
         }
@@ -19,9 +19,9 @@ pipeline{
             steps {
                 script {
                  withCredentials([string(credentialsId: 'balak01', variable: 'dockerhubpwd')]) {
-                    sh 'sudo docker login -u balak01 -p ${dockerhubpwd}'
+                    sh 'docker login -u balak01 -p ${dockerhubpwd}'
                  }  
-                 sh 'sudo docker push balak01/nnodejs-app'
+                 sh 'docker push balak01/nnodejs-app'
                 }
             }
         }
